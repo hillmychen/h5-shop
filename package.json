@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx webpack --config webpack.config.js --mode production",
-    "dev": "npx webpack-dev-server --config webpack.config.js --color --progress --hot --mode development"
+    "dev": "npx webpack-dev-server --config webpack.config.js --color --progress --hot --display-error-details --mode development"
   },
   "author": "HughieChen",
   "license": "ISC",
@@ -41,6 +41,7 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
+    "better-scroll": "^1.12.6",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

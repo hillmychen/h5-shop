@@ -9,10 +9,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
 // 添加压缩文件
 const UglifyjsWebpackPlugin= require('uglifyjs-webpack-plugin')
-// 添加前缀
+// 添加路径前缀
 function resolve (dir) {
     return path.join(__dirname, '..', dir)
 }
+
 
 module.exports = {
     //entry为入口,webpack从这里开始编译
@@ -40,12 +41,13 @@ module.exports = {
     },
     // vuejs配置
     resolve: {
+        extensions: ['*', '.js', '.vue', '.json'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
+            // 配置路径
             '@': resolve('src')
 
         },
-        extensions: ['*', '.js', '.vue', '.json']
     },
 
     //module是配置所有模块要经过什么处理

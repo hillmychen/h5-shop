@@ -18,9 +18,6 @@ export default [{
         {
             path: '/index',
             component: index
-        },
-        {
-            
         }
     ]
 

@@ -68,3 +68,8 @@ $fc:#fff;
 	justify-content: $type;
 
 }
+@mixin fv($type: center){
+	display: flex;
+	align-items: $type;
+	-webkit-align-items: $type;
+}

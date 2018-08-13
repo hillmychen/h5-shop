@@ -1,0 +1,73 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add better-scroll --save
+
+PATH: 
+  C:\Users\Administrator\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Administrator\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\nodejs;C:\Program Files\Git\cmd;D:\redis;C:\Program Files (x86)\Yarn\bin;D:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\mysql-8.0.11-winx64\bin;D:\redis;C:\Users\Administrator\AppData\Local\Yarn\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  8.11.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\Users\Administrator\Desktop\h5-shop\node_modules\node-sass\vendor\win32-x64-57\binding.node'
+
+npm manifest: 
+  {
+    "name": "shop",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "build": "npx webpack --config webpack.config.js --mode production",
+      "dev": "npx webpack-dev-server --config webpack.config.js --color --progress --hot --display-error-details --mode development"
+    },
+    "author": "HughieChen",
+    "license": "ISC",
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:hillmychen/h5-shop.git"
+    },
+    "devDependencies": {
+      "babel-core": "^6.26.3",
+      "babel-loader": "^7.1.5",
+      "babel-plugin-transform-runtime": "^6.23.0",
+      "babel-polyfill": "^6.26.0",
+      "babel-preset-env": "^1.7.0",
+      "clean-webpack-plugin": "^0.1.19",
+      "css-loader": "^1.0.0",
+      "eslint": "^5.3.0",
+      "extract-text-webpack-plugin": "^4.0.0-beta.0",
+      "fastclick": "^1.0.6",
+      "file-loader": "^1.1.11",
+      "html-webpack-plugin": "^3.2.0",
+      "node-sass": "^4.9.2",
+      "postcss-cssnext": "^3.1.0",
+      "postcss-loader": "^2.1.6",
+      "sass-loader": "^7.1.0",
+      "style-loader": "^0.22.0",
+      "uglifyjs-webpack-plugin": "^1.2.7",
+      "url-loader": "^1.0.1",
+      "vue-loader": "^15.3.0",
+      "vue-style-loader": "^4.1.1",
+      "vue-template-compiler": "^2.5.17",
+      "webpack": "^4.16.5",
+      "webpack-cli": "^3.1.0",
+      "webpack-dev-server": "^3.1.5"
+    },
+    "dependencies": {
+      "vue": "^2.5.17",
+      "vue-router": "^3.0.1",
+      "vuex": "^3.0.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
