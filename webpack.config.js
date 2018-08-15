@@ -122,7 +122,11 @@ module.exports = {
             template: path.join(__dirname , "./index.html")  //要打包文件的路径
         }),
         new ExtractTextPlugin({
-            filename: 'index.[hash:8].css'
+            // filename: 'index.[hash:8].css'
+            filename: '[name].[hash].css',
+            // 打包报错
+            allChunks: true
+
         }),
         new CleanWebpackPlugin(['dist']),
         new VueLoaderPlugin(),

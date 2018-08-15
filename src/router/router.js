@@ -1,6 +1,9 @@
 import App from '../App'
 
+// 首页
 const index = r => require.ensure([], () => r(require('../page/index/index')), 'index')
+// 首页分类
+const catagories = r => require.ensure([], () => r(require('../page/catagories/catagories')), 'catagories')
 
 
 export default [{
@@ -17,7 +20,15 @@ export default [{
         // index页面
         {
             path: '/index',
-            component: index
+            component: index,
+            children:[
+                // 首页分类子路由
+                {
+                    path:'catagories/:id',
+                    component:catagories,
+                    name:"catagories"
+                }
+            ]
         }
     ]
 

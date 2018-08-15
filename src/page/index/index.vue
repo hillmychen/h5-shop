@@ -29,29 +29,48 @@
             </section>
         </head-top>
 
-        <!-- 标签导航栏 -->
-        <nav>
-            <div class="wrapper" ref="wrapper">
-                <ul class="content">
-                <li>...</li>
-                <li>...</li>
-                ...
-                </ul>
-            </div>
-        </nav>
+        <!--标签导航栏-->
+        <nav-list :navList="itemList"></nav-list>
+        
     </div>
 </template>
 <script>
 import headTop from "../../components/header.vue"
-import BScroll from 'better-scroll'
+import navList from "../../components/navlist.vue"
+
 export default {
     data(){
         return{
-            searchText:'请输入搜索内容'
+            searchText:'请输入搜索内容',
+            itemList:[
+                {
+                    'title':'今日特卖'
+                },
+                {
+                    'title':'美妆个户'
+                },
+                {
+                    'title':'食品饮料'
+                },
+                {
+                    'title':'服饰箱包'
+                },
+                {
+                    'title':'母婴用品'
+                },
+                {
+                    'title':'测试'
+                },
+                {
+                    'title':'测试'
+                }
+                
+            ]
         }
     },
     components:{
-        headTop
+        headTop,
+        navList
     },
     beforeCreate(){
         console.log(`
@@ -218,23 +237,13 @@ export default {
         `)
     },
     mounted(){
-        this.$nextTick(() => {
-            if(!this.scroll){
-                this.scroll = new Bscroll(this.$refs.wrapper, {})
-            }
-        })
+        
     }
 }
 </script>
 <style lang="scss" scoped>
 @import '../../style/mixin';
 
-// 滚动标签
-.bscroll{
-    width: 100%;
-    height: 5vH;
-    overflow: hidden;
-}
 // 头部
 .header{
     width:100%;
@@ -263,4 +272,5 @@ export default {
         padding: 0 .25rem;
     }
 }
+
 </style>
