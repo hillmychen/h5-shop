@@ -9,7 +9,7 @@
                         v-for="(item,index) in navList" 
                         :key="index" 
                         :to="{ name: 'catagories', params:{ id: index }}"
-                        ref="slideItem" >
+                        ref="slideItem" :class="`${index === currentPageIndex ? 'active' :'' }`">
                                 {{item.title}}
                     </router-link>
                 </ul>
@@ -32,9 +32,15 @@ export default {
 
         }
     },
+    computed:{
+        currentPageIndex(){
+            return Number(this.$route.params.id)
+        }
+    },
     async mounted() {
         // 等待dom渲染完成
         await this.$nextTick()
+        console.log(Number(this.$route.params.id))
         
         // 初始化BSscroll
         await this.initBScoll()
@@ -82,12 +88,17 @@ nav{
         overflow: hidden;
         .content{
             display: flex;
-            padding: .2rem 0;
+            width:100%;
+            height: 100%;
             li{
                 flex:0 0 1.7rem;
                 font-size: .3rem;
                 text-align: center;
                 white-space: nowrap;
+                &.active{
+                    color:rgba(186,67,92, 1.0);
+                    border-bottom: 5px solid rgba(186,67,92, 1.0);
+                }
             }
         }
     }

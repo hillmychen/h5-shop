@@ -246,10 +246,7 @@ export default {
 
 // 头部
 .header{
-    width:100%;
-    height:.7rem;
     @include wh(100%, .7rem);
-
     .scan{
         @include wh(1rem, 100%);
     }
