@@ -11,7 +11,8 @@
         <species-tab :speciesList="speciesList"></species-tab>
 
         <!-- 商品按标签排序 -->
-        <sort-list></sort-list>
+        <sort-list :sortList="sortList"></sort-list>
+
     </div>
 </template>
 <script>
@@ -75,6 +76,20 @@
                         picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000002QkMgs2GfWgL.jpg?max_age=2592000',
                         title:6666
 
+                    }
+                ],
+                sortList:[
+                    {
+                        title:"综合",
+                        name:"complex"
+                    },
+                    {
+                        title:"上新",
+                        name:"brandNew"                  
+                    },
+                    {
+                        title:"价格", 
+                        name:"price"                       
                     }
                 ]
             }
