@@ -4,7 +4,8 @@ import App from '../App'
 const index = r => require.ensure([], () => r(require('../page/index/index')), 'index')
 // 首页分类
 const catagories = r => require.ensure([], () => r(require('../page/catagories/catagories')), 'catagories')
-
+// 商品展示组件
+const productsCard = r => require.ensure([], () => r(require('../components/productsCard')), 'productsCard')
 
 export default [{
     path:'/',
@@ -26,7 +27,14 @@ export default [{
                 {
                     path:'catagories/:id',
                     component:catagories,
-                    name:"catagories"
+                    name:"catagories",
+                    children:[
+                        {
+                            path:'sort',
+                            component:productsCard,
+                            name:"productsCard",
+                        }
+                    ]
                 }
             ]
         }
