@@ -105,7 +105,6 @@
             }
         },
         async mounted(){
-
         },  
     }
 </script>

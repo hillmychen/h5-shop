@@ -1,7 +1,10 @@
 <template>
+
     <div>
         <!-- 头部导航栏 -->
+
         <head-top >
+
             <section slot="index-head" class="header flex flex-ver">
 
                 <div class="scan flex flex-ver justify-content-center">
@@ -27,15 +30,21 @@
                 </div>
 
             </section>
+
         </head-top>
 
         <!--标签导航栏-->
         <nav-list :navList="itemList"></nav-list>
         
+        <!-- 底部标签栏 -->
+        <foot-tab></foot-tab>
+
     </div>
+
 </template>
 <script>
 import headTop from "../../components/header.vue"
+import footTab from "../../components/footer.vue"
 import navList from "../../components/navlist.vue"
 
 export default {
@@ -70,7 +79,8 @@ export default {
     },
     components:{
         headTop,
-        navList
+        navList,
+        footTab
     },
     beforeCreate(){
         console.log(`
@@ -236,10 +246,20 @@ export default {
             ***************约吗？*************
         `)
     },
+
     mounted(){
-        
+        document.addEventListener('touchstart', function(event) {
+            // 判断默认行为是否可以被禁用
+            if (event.cancelable) {
+                // 判断默认行为是否已经被禁用
+                if (!event.defaultPrevented) {
+                    event.preventDefault();
+                }
+            }
+        }, false);
     }
 }
+
 </script>
 <style lang="scss" scoped>
 @import '../../style/mixin';

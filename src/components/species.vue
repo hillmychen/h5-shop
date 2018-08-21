@@ -36,7 +36,6 @@ export default {
             @include wh(1rem , .8rem);
             img{
                 @include wh(.65rem , .8rem);
-
             }
         }
         .species-decription{
