@@ -1,12 +1,12 @@
 <template>
     <!-- slider整体的容器 -->
-    <div class="slider" ref="slider" :style="`height:${sliderHeight}`">
+    <div class="slider" ref="slider" :style="`height:${sliderHeight};`" >
 
         <!-- slider-group 是 slider-item 的容器 -->
-        <div class="slider-group" ref="sliderGroup">
+        <div class="slider-group flex" ref="sliderGroup">
             <div class="slider-item" v-for="(item,index) in list" :key="index" >
                 <a :href="item.linkUrl">
-                    <img :src="item.picUrl" :alt="item.linkUrl" :style="`width:${imgWidth}`" ref="sliderItemImg">
+                    <img :src="item.picUrl" :alt="item.linkUrl" ref="sliderItemImg">
                 </a>
             </div>
         </div>
@@ -73,7 +73,8 @@ export default {
         _initSliderWidth() {
             // 获取图片的 clientWidth，（因为设置的时候可能使用 100% 设置图片宽度，因此 props width 不能直接使用）
             //getBoundingClientRect() 返回元素的大小及其相对于视口的位置
-            const imgWidth = this.$refs.sliderItemImg[0].getBoundingClientRect().width;
+            // const imgWidth = this.$refs.sliderItemImg[0].getBoundingClientRect().width;
+            const imgWidth = this.imgWidth
             console.log(imgWidth)
             // 通过图片的 clientWidth 设置 slider 容器的宽度 , 
             let sliderWidth = imgWidth * this.list.length;
@@ -171,7 +172,6 @@ export default {
         height:100%;
         .slider-item{
             height:100%;
-            float: left;
             overflow: hidden;
             text-align: center;
             a{

@@ -17,8 +17,21 @@ import FastClick from 'fastclick'
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);
-    }, false);
+	}, false);
+	
+	// Chrome浏览器报错
+	document.addEventListener('touchstart', function(event) {
+		// 判断默认行为是否可以被禁用
+		if (event.cancelable) {
+			// 判断默认行为是否已经被禁用
+			if (!event.defaultPrevented) {
+				event.preventDefault();
+			}
+		}
+	}, false);
 }
+
+
 // 挂载路由
 Vue.use(VueRouter)
 // 路由分发

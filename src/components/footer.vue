@@ -31,14 +31,14 @@ export default {
                 {
                     nav:"购物车",
                     tabUrl:'',
-                    icon:'#icon-shouye'
+                    icon:'#icon-gouwuche1'
 
                 },
 
                 {
                     nav:"我的",
                     tabUrl:'',
-                    icon:'#icon-shouye'
+                    icon:'#icon-gerenzhongxin'
 
                 }
             ],
