@@ -4,7 +4,6 @@
         <!-- 头部导航栏 -->
 
         <head-top >
-
             <section slot="index-head" class="header flex flex-ver">
 
                 <div class="scan flex flex-ver justify-content-center">
@@ -30,7 +29,6 @@
                 </div>
 
             </section>
-
         </head-top>
 
         <!--标签导航栏-->

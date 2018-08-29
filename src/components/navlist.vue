@@ -90,6 +90,8 @@ nav{
             display: flex;
             width:100%;
             height: 100%;
+            touch-action: none;
+
             li{
                 flex:0 0 1.7rem;
                 font-size: .3rem;

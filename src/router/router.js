@@ -21,6 +21,7 @@ export default [{
         // index页面
         {
             path: '/index',
+            redirect: '/index/catagories/0/sort',
             component: index,
             children:[
                 // 首页分类子路由

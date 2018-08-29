@@ -82,7 +82,9 @@
         },
         computed:{
             tabId(){
+                console.log(this.$route.params.id)
                 return this.$route.params.id
+
             },
             imgWidth(){
                 return document.body.clientWidth
@@ -117,7 +119,9 @@
 </script>
 <style lang="scss" scoped>
 @import '../../style/mixin';
-
+*{
+    touch-action: none;
+}
 .catagory-container{
     margin-bottom: .1rem;
     .today-container{
