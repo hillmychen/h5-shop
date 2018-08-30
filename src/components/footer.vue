@@ -30,7 +30,7 @@ export default {
 
                 {
                     nav:"购物车",
-                    tabUrl:'',
+                    tabUrl:'/cart',
                     icon:'#icon-gouwuche1'
 
                 },

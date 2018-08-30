@@ -7,6 +7,9 @@ const catagories = r => require.ensure([], () => r(require('../page/catagories/c
 // 商品展示组件
 const productsCard = r => require.ensure([], () => r(require('../components/productsCard')), 'productsCard')
 
+// 购物车组件
+const cart = r => require.ensure([], () => r(require('../page/cart/cart')), 'cart')
+
 export default [{
     path:'/',
     //顶层路由，对应index.html
@@ -37,8 +40,16 @@ export default [{
                         }
                     ]
                 }
+                
             ]
+        },
+        // 购物车
+        {
+            path: '/cart',
+            component:cart,
+            name:'cart'
         }
+
     ]
 
 }]

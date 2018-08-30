@@ -24,8 +24,8 @@ module.exports = {
     //output为输出 path代表路径 filename代表文件名称
     output: {
         path: path.join(__dirname, './dist'),
-        filename: 'main.[hash:8].js',
-        chunkFilename: '[name].[chunkhash:8].js'
+        filename: 'static/js/main.[hash:8].js',
+        chunkFilename: 'static/js/[name].[chunkhash:8].js'
     },
     // 提取公共样式
     optimization: {
@@ -100,8 +100,8 @@ module.exports = {
                 use:[{
                     loader:'url-loader',
                     options:{ // 这里的options选项参数可以定义多大的图片转换为base64
-                        limit:5000000, // 图片小于
-                        outputPath:'images' //定义输出的图片文件夹
+                        limit:5000, // 图片小于
+                        outputPath:'static/images' //定义输出的图片文件夹
                     }
                 }]
             },
@@ -112,7 +112,16 @@ module.exports = {
                     use: ['css-loader', 'postcss-loader', 'sass-loader']
                 })
             },
-            
+            {
+                test: /\.svg/,
+                use: {
+                    loader: 'svg-url-loader',
+                    options: {
+                        limit:5000, // 图片小于
+                        outputPath:'static/images' 
+                    }
+                }
+            }
     
         ]
     },
@@ -123,7 +132,7 @@ module.exports = {
         }),
         new ExtractTextPlugin({
             // filename: 'index.[hash:8].css'
-            filename: '[name].[hash].css',
+            filename: 'static/css/[name].[hash].css',
             // 打包报错
             allChunks: true
 
