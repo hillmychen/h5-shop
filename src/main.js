@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
+import store from './store/'
+
 // 引入路由
 import routes from './router/router'
 
@@ -9,8 +11,24 @@ import {routerMode} from './config/env'
 // 引入路由
 import VueRouter from 'vue-router'
 
+
 // 引入rem
 import './config/rem'
+require('./assets/css/base.css'); //全局引入
+
+import VueLazyload from 'vue-lazyload'
+import Loading from './components/loading'
+// 加载动画
+Vue.use(Loading);
+// 懒加载
+Vue.use(VueLazyload, {
+    preLoad: 1.3,
+    error: require('./images/err.png'),
+    loading: require('./images/loading.gif'),
+    attempt: 1,
+    listenEvents: ['scroll']
+});
+
 
 import FastClick from 'fastclick'
 // 解决移动端点击穿透
@@ -30,7 +48,10 @@ if ('addEventListener' in document) {
 		}
 	}, false);
 }
-
+// 处理刷新的时候vuex被清空但是用户已经登录的情况
+if (window.sessionStorage.userInfo) {
+    store.dispatch('setUserInfo', JSON.parse(window.sessionStorage.userInfo));
+}
 
 // 挂载路由
 Vue.use(VueRouter)
@@ -56,6 +77,7 @@ const router = new VueRouter({
 // 挂载vue实例
 new Vue({
     el: '#app',
-    router,
+	router,
+	store,
     render:h=>h(App)
 })

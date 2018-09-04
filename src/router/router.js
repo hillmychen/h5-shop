@@ -10,6 +10,9 @@ const productsCard = r => require.ensure([], () => r(require('../components/prod
 // 购物车组件
 const cart = r => require.ensure([], () => r(require('../page/cart/cart')), 'cart')
 
+// 商品展示组件
+const GoodsDetail = r => require.ensure([], () => r(require('../components/GoodsDetail')), 'GoodsDetail')
+
 export default [{
     path:'/',
     //顶层路由，对应index.html
@@ -48,6 +51,11 @@ export default [{
             path: '/cart',
             component:cart,
             name:'cart'
+        },
+        // 商品详情页
+        {
+            path: '/detail/:id',
+            component: GoodsDetail
         }
 
     ]

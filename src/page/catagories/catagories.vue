@@ -26,7 +26,40 @@
         data(){
             return{
                 // 轮播图数据
-                sliderList:[],
+                sliderList:[
+                    {
+                        linkUrl:'http://y.qq.com/w/album.html?albummid=001RsOK33No4Sz&ADTAG=myqq&from=myqq&channel=10007100',
+                        picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000001EwfWs4QSIl6.jpg?max_age=2592000',
+                        title:6666,
+                        product_id:0
+                    },
+                    {
+                        linkUrl:'https://y.qq.com/msa/270/0_5102.html?ADTAG=myqq&from=myqq&channel=10007100',
+                        picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000001CV9tc1xK59w.jpg?max_age=2592000',
+                        title:6666,
+                        product_id:1
+                    },
+                    {
+                        linkUrl:'https://y.qq.com/m/client/music_headline/index.html?_hidehd=1&_button=2&zid=689728&ADTAG=myqq&from=myqq&channel=10007100',
+                        picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000002n0L9H3Bf8F0.jpg?max_age=2592000',
+                        title:6666,
+                        product_id:2
+                    },
+                    {
+                        linkUrl:'http://y.qq.com/w/album.html?albummid=001cTmxl1t64WK&ADTAG=myqq&from=myqq&channel=10007100',
+                        picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000001pf9Sy13Evav.jpg?max_age=2592000',
+                        title:6666,
+                        product_id:3
+
+                    },
+                    {
+                        linkUrl:'https://y.qq.com/msa/324/0_5116.html?ADTAG=myqq&from=myqq&channel=10007100',
+                        picUrl:'https://y.gtimg.cn/music/photo_new/T003R720x288M000002QkMgs2GfWgL.jpg?max_age=2592000',
+                        title:6666,
+                        product_id:4
+
+                    }
+                ],
                 speed:5000,
                 speciesList:[
                     {
@@ -103,16 +136,16 @@
             // 初始化数据
             async init(){
                 // 根据标签导航栏，获取轮播数据
-                await productsBanner(this.tabId)
-                    .then(res=>{
-                        if(res.status){
-                            console.log(res)
-                            this.sliderList=res.data.sliderList
-                        }
-                    }).catch((err)=>{
+                // await productsBanner(this.tabId)
+                //     .then(res=>{
+                //         if(res.status){
+                //             console.log(res)
+                //             this.sliderList=res.data.sliderList
+                //         }
+                //     }).catch((err)=>{
 
-                    console.log(err)
-                })
+                //     console.log(err)
+                // })
             }
         }
     }

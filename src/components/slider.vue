@@ -5,9 +5,9 @@
         <!-- slider-group 是 slider-item 的容器 -->
         <div class="slider-group flex" ref="sliderGroup">
             <div class="slider-item" v-for="(item,index) in list" :key="index" >
-                <a :href="item.linkUrl">
-                    <img :src="item.picUrl" :alt="item.linkUrl" ref="sliderItemImg">
-                </a>
+                <router-link :to="'/detail/'+item.product_id">
+                    <img v-lazy="item.picUrl" alt="" ref="sliderItemImg">
+                </router-link>
             </div>
         </div>
 
@@ -22,7 +22,7 @@ import BScroll from 'better-scroll'
 export default {
     props:{
         // width -> 图片宽度 默认 100%
-        // list -> 数据列表 对象数组，格式 [{linkUrl:'url',picUrl:'url'}]
+        // list -> 数据列表 对象数组，格式 [{linkUrl:'url',picUrl:'url',product_id:0}]
         // loop -> 是否循环轮播 默认 true
         // autoPlay -> 是否自动轮播 默认 true
         // speed -> 自动轮播速度 默认 3000

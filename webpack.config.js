@@ -24,8 +24,8 @@ module.exports = {
     //output为输出 path代表路径 filename代表文件名称
     output: {
         path: path.join(__dirname, './dist'),
-        filename: 'static/js/main.[hash:8].js',
-        chunkFilename: 'static/js/[name].[chunkhash:8].js'
+        filename: '../addons/sz_yi/plugin/xingyun/template/mobile/default/shop/static/js/main.[hash:8].js',
+        chunkFilename: '../addons/sz_yi/plugin/xingyun/template/mobile/default/shop/static/js/[name].[chunkhash:8].js'
     },
     // 提取公共样式
     optimization: {
@@ -96,12 +96,14 @@ module.exports = {
             // },
             {
                 // 配置图片
-                test:/\.(png|jpg|gif)$/,
+                test:/\.(png|jpg|ico|jpeg|gif)$/,
                 use:[{
-                    loader:'url-loader',
+                    loader:'file-loader',
                     options:{ // 这里的options选项参数可以定义多大的图片转换为base64
-                        limit:5000, // 图片小于
-                        outputPath:'static/images' //定义输出的图片文件夹
+                        limit:1024, // 图片小于
+                        outputPath:'../addons/sz_yi/plugin/xingyun/template/mobile/default/shop/static/images', //定义输出的图片文件夹
+                        name:"[name].[ext]"
+                        // publicPath:"../images"
                     }
                 }]
             },
@@ -117,8 +119,8 @@ module.exports = {
                 use: {
                     loader: 'svg-url-loader',
                     options: {
-                        limit:5000, // 图片小于
-                        outputPath:'static/images' 
+                        limit:1024, // 图片小于
+                        outputPath:'../addons/sz_yi/plugin/xingyun/template/mobile/default/shop/static/images' 
                     }
                 }
             }
@@ -132,7 +134,7 @@ module.exports = {
         }),
         new ExtractTextPlugin({
             // filename: 'index.[hash:8].css'
-            filename: 'static/css/[name].[hash].css',
+            filename: '../addons/sz_yi/plugin/xingyun/template/mobile/default/shop/static/css/[name].[hash].css',
             // 打包报错
             allChunks: true
 
